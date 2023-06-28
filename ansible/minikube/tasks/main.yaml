@@ -1,0 +1,29 @@
+    - name: Install dependencies
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - curl
+        - apt-transport-https
+        - docker.io
+
+    - name: Download and install Minikube
+      shell: |
+        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        sudo install minikube-linux-amd64 /usr/local/bin/minikube
+        rm minikube-linux-amd64
+
+    - name: Add user to docker group
+      user:
+        name: minikube-user
+        groups: docker
+        append: true
+
+    - name: Reset ssh connection to allow user changes to affect ansible user
+      meta:
+        reset_connection
+
+    - name: Start Minikube with Docker driver
+      shell: minikube start --driver=docker --cpus 4 --memory 8g --disk-size 20g
+      become: true
+      become_user: minikube-user
