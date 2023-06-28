@@ -1,0 +1,4 @@
+- name: minikube-rule
+  hosts: all
+  roles:
+    - minikube
