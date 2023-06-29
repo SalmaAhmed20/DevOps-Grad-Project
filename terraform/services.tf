@@ -1,7 +1,7 @@
 resource "kubernetes_service" "jenkins-svc" {
   metadata {
     name = "jenkins-svc"
-    namespace = "tools"
+    namespace = kubernetes_namespace.tools-namespace.metadata.0.name
   }
   spec {
     selector = {
@@ -19,7 +19,7 @@ resource "kubernetes_service" "jenkins-svc" {
 resource "kubernetes_service" "nexus-svc" {
   metadata {
     name = "nexus-svc"
-    namespace = "tools"
+    namespace = kubernetes_namespace.tools-namespace.metadata.0.name
   }
   spec {
     selector = {

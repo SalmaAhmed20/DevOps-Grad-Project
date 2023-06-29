@@ -1,7 +1,7 @@
 resource "kubernetes_deployment" "jenkins" {
   metadata {
     name      = "jenkins"
-    namespace = "tools"
+    namespace = kubernetes_namespace.tools-namespace.metadata.0.name
     labels = {
       test = "jenkins"
     }
@@ -20,8 +20,9 @@ resource "kubernetes_deployment" "jenkins" {
         }
       }
       spec {
+        service_account_name = kubernetes_service_account_v1.jenkins-admin-sa.metadata.0.name
         container {
-          image = "salma22/jenkinswithdocker"
+          image = "salma22/jenkinsdockerkubectl"
           name  = "jenkins"
 
           port {
@@ -77,4 +78,5 @@ resource "kubernetes_deployment" "jenkins" {
       }
     }
   }
+  depends_on = [ kubernetes_service_account_v1.jenkins-admin-sa, kubernetes_namespace.tools-namespace ]
 }

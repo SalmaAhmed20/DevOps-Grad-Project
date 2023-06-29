@@ -49,4 +49,5 @@ resource "kubernetes_deployment" "nexus" {
       }
     }
   }
+  depends_on = [ kubernetes_namespace.tools-namespace ]
 }
