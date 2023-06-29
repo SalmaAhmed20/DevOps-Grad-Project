@@ -15,7 +15,7 @@
 
     - name: Add user to docker group
       user:
-        name: mahaelkomey
+        name: {{minikube-user}}
         groups: docker
         append: true
 
@@ -24,6 +24,11 @@
         reset_connection
 
     - name: Start Minikube with Docker driver
-      shell: minikube start --driver=docker --cpus 4 --memory 8g --disk-size 20g
+      shell: minikube start --driver=docker --cpus 8 --memory 10g --disk-size 20g
       become: true
-      become_user: mahaelkomey
+      become_user: {{minikube-user}}
+
+    - name: Start Minikube addons
+      shell: minikube addons enable ingress
+      become: true
+      become_user: {{minikube-user}}
