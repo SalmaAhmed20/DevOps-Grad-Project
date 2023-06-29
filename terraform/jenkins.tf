@@ -47,17 +47,17 @@ resource "kubernetes_deployment" "jenkins" {
           }
         }
         dns_config {
-          nameservers = ["192.168.49.1"]
-          searches    = ["domain.name"]
+          nameservers = var.nameserver
+          searches    = var.search
           option {
-            name  = "ndots"
+            name  = var.options[0]
             value = 0
           }
           option {
-            name = "trust-ad"
+            name = var.options[1]
           }
           option {
-            name = "edns0"
+            name = var.options[2]
           }
         }
 
