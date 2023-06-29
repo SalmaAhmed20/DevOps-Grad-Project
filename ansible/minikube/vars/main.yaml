@@ -1,1 +1,6 @@
-minikube-user: mahaelkomey
+minikube_user: mahaelkomey
+
+dependencies:
+        - curl
+        - apt-transport-https
+        - docker.io
