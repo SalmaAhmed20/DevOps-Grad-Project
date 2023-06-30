@@ -1,6 +1,4 @@
-minikube_user: mahaelkomey
-
+minikube_user: salma
 dependencies:
         - curl
         - apt-transport-https
-        - docker.io

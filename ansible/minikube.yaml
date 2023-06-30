@@ -1,4 +1,4 @@
 - name: minikube-rule
-  hosts: all
+  hosts: localhost
   roles:
     - minikube
