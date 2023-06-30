@@ -1,10 +1,9 @@
-   - name: Install dependencies
+    - name: Install dependencies
       apt:
         name: "{{ item }}"
         state: present
       loop:
         "{{ dependencies }}"
-
     - name: Download and install Minikube
       shell: |
         curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64

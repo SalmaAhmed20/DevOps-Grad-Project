@@ -7,6 +7,13 @@ The project is a try to use all Dev & Ops tools to\
 4- **jenkins** for CI and will push docker image to **nexus** and CD will deploy app to Kubernetes cluster **minikube**
 5- **docker** as container runtime engine
 ## Ansible
+Prerequisite
+```
+ssh-keygen
+```
+```
+cat ~/.ssh/id_rsa.pub >  ~/.ssh/authorized_keys 
+```
 - Create an ansible role
 - in tasks
   - Check for dependencies (driver need for minikube)
@@ -93,6 +100,6 @@ kubectl exec  <podname> -n tools cat /nexus-data/admin.password
 
 ### Create a new  docker hosted Repo
 ![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/02a6fab2-f40d-4da9-9d4f-f5fbab50af1e)
-### After Pushing to nexus fro jenkins CI 
+### After Pushing to nexus from jenkins CI 
 ![Screenshot from 2023-06-30 18-12-57](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/0c31930a-5c0e-4cdf-9cc3-b623feced306)
 
