@@ -90,7 +90,8 @@ minikube service list
 ```
 kubectl exec <podname> -n tools cat /var/jenkins_home/secrets/initialAdminPassword
 ```
-![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/7a2487c8-afa3-4bcb-a887-ff609df5d83e)
+![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/9196d545-86b4-4cff-9317-a4d4398bb803)
+
 ## nexus
 ![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/08078b03-28bb-49ee-bfc7-cf3b90d56cc9)
 
