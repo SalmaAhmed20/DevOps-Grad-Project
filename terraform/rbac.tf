@@ -32,3 +32,34 @@ resource "kubernetes_cluster_role_binding" "jenkins-admin-crb" {
     namespace = kubernetes_namespace.tools-namespace.metadata.0.name
   }
 }
+resource "kubernetes_role" "role" {
+  metadata {
+    name      = "deployment-manager"
+    namespace = "dev"
+  }
+
+  rule {
+    api_groups = ["apps"]
+    resources  = ["deployments"]
+    verbs      = ["get", "list", "watch", "create", "update", "patch", "delete"]
+  }
+}
+
+resource "kubernetes_role_binding" "role_binding" {
+  metadata {
+    name      = "jenkins-deployment-manager-binding"
+    namespace = "dev"
+  }
+
+  role_ref {
+    api_group = "rbac.authorization.k8s.io"
+    kind      = "Role"
+    name      = kubernetes_role.role.metadata[0].name
+  }
+
+  subject {
+    kind      = "ServiceAccount"
+    name      = "jenkins-admin"
+    namespace = "tools"
+  }
+}
