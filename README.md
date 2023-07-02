@@ -4,7 +4,7 @@ The project is a try to use all Dev & Ops tools to\
 1- setup a Kubernetes cluster **minikube** using **Ansible**\
 2- Create Kubernetes resources **nexus** and **jenkins** using **Terraform**\
 3- **nexus** for private docker registry\
-4- **jenkins** for CI and will push docker image to **nexus** and CD will deploy app to Kubernetes cluster **minikube**
+4- **jenkins** for CI and will push docker image to **nexus** and CD will deploy app to Kubernetes cluster **minikube**\
 5- **docker** as container runtime engine
 ## Ansible
 Prerequisite
@@ -37,8 +37,8 @@ cat ~/.ssh/id_rsa.pub >  ~/.ssh/authorized_keys
 ansible-playbook -i inventory minikube.yaml --ask-become-pass
 ```
 
+![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/9842e39f-2999-48e9-ae51-607e7439d20d)
 
-![6d12e701-11f3-4f6b-bac4-70d94f193221](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/5cb2e023-66a3-4584-ad2e-077a06f67f6b)\
 **You need to ssh to minikube and create ~/nexus-data directroy and change permission to avoid any error**\
 ![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/0a6cb2e6-552e-4f64-936d-c86721ce6623)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -77,16 +77,21 @@ terraform apply
 ```
 kubectl get po -n tools
 ```
-![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/5e2346ba-67bd-4069-a755-b6000ff7a07b)
+![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/210dee67-d2f3-4c88-9a7b-4a624d30203f)
+
 ```
 minikube service list
 ```
-![Screenshot from 2023-06-30 17-14-07](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/8745eb78-67c0-471d-8675-b747fec48874)
+![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/513998b6-4608-44a1-b7e7-873d33778bd4)
+
 ## Jenkins
+![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/8b706c39-1e94-44bc-890c-ba699787c991)
+
 ```
-kubectl exec <podname> -n tools cat /var/jenkins_home/secrets/initialAdminPassword`
+kubectl exec <podname> -n tools cat /var/jenkins_home/secrets/initialAdminPassword
 ```
-![Screenshot from 2023-06-30 17-13-45](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/d11eb65e-d1c0-4832-955f-40b26cf91421)
+![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/9196d545-86b4-4cff-9317-a4d4398bb803)
+
 ## nexus
 ![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/08078b03-28bb-49ee-bfc7-cf3b90d56cc9)
 
@@ -95,8 +100,8 @@ kubectl exec <podname> -n tools cat /var/jenkins_home/secrets/initialAdminPasswo
 ```
 kubectl exec  <podname> -n tools cat /nexus-data/admin.password
 ```
-![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/66c87997-7a71-45c9-b3dc-2dde91e49fd3)
-![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/a4dbe5c9-6c98-4fce-858d-40a67105f5af)
+![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/0961d1d5-27aa-49e7-80d7-0594713e709a)
+![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/f49c4ebe-6faa-44ba-b703-5b10e19f9cf7)
 
 ### Create a new  docker hosted Repo
 ![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/02a6fab2-f40d-4da9-9d4f-f5fbab50af1e)
