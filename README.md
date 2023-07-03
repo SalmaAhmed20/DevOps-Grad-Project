@@ -101,6 +101,8 @@ kubectl create secret docker-registry nexus-credentials --docker-server=nexus-sv
 ![Screenshot from 2023-07![eed4a148-b4f4-4b9a-bf25-05aac8d7ce63](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/d8792536-3d09-4fed-aee6-ef993abe7d99)
 ![eed4a148-b4f4-4b9a-bf25-05aac8d7ce63](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/c6d2badf-c48e-46cb-ba74-321b6c6ed2c3)
 ![da47454b-f651-451d-85d6-b3e0349ee53b](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/27ba4152-ad2d-42f5-b772-c481f07f87be)
+![App  drawio](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/3c7df028-8ee8-4f2f-a6df-d434fec8aee7)
+
 
 ## nexus
 ![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/08078b03-28bb-49ee-bfc7-cf3b90d56cc9)
