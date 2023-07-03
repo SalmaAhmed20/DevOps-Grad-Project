@@ -20,7 +20,7 @@
       
     - name: Add user to docker group
       user:
-        name: "{{minikube-user}}"
+        name: "{{ minikube-user }}"
         groups: docker
         append: true
         
