@@ -1,4 +1,4 @@
-minikube_user: salma
+minikube_user: ubuntu
 dependencies:
         - curl
         - apt-transport-https
