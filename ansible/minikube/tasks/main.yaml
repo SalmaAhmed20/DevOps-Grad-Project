@@ -29,6 +29,11 @@
         name: "{{ minikube_user }}"
         groups: docker
         append: true
+
+    - name: Reset ssh connection to allow user changes to affect ansible user
+      meta:
+        reset_connection
+        
     - name: Download and install Minikube
       shell: |
         curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
