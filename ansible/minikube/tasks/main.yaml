@@ -17,11 +17,13 @@
         name: docker
         state: started
       when: docker_status is failed
+      
     - name: Add user to docker group
       user:
         name: "{{minikube-user}}"
         groups: docker
         append: true
+        
     - name: Install kubectl
       shell: |
         sudo apt-get install -y ca-certificates curl
