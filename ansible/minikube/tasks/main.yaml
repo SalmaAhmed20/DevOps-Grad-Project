@@ -33,6 +33,10 @@
     - name: Reset ssh connection to allow user changes to affect ansible user
       meta:
         reset_connection
+
+    - name: Install kubectl
+      shell: |
+        sudo apt-get install -y ca-certificates curl
         
     - name: Download and install Minikube
       shell: |
