@@ -71,7 +71,7 @@ terraform init
 ```
 terraform apply
 ```
-![grad-project drawio](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/f1feb31e-b98b-4974-8276-8c1e425553f6)
+![grad-project drawio (1)](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/3a115844-98de-4db5-a9aa-c8dea8e410cb)
 ![Screenshot from 2023-06-30 17-04-16](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/51e7849d-0c73-4642-b889-512f857f2767)
 ![Screenshot from 2023-06-30 17-05-40](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/aec146d3-9d9b-4ae6-b885-b6d66fb7d74e)
 ```
@@ -91,6 +91,16 @@ minikube service list
 kubectl exec <podname> -n tools cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 ![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/9196d545-86b4-4cff-9317-a4d4398bb803)
+**Before Run Pipeline**
+```
+kubectl create secret docker-registry nexus-credentials --docker-server=nexus-svc.tools:5000 --docker-username=<password> --docker-password=<password>
+```
+*Create pipeline*
+![Screenshot from 2023-07-03 18-45-19](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/2023abc7-6f70-4bdb-90df-efc4d436e358)
+![Screenshot from 2023-07-03 18-46-42](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/80985f39-5fa0-4a52-b618-0fddd560de99)
+![Screenshot from 2023-07![eed4a148-b4f4-4b9a-bf25-05aac8d7ce63](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/d8792536-3d09-4fed-aee6-ef993abe7d99)
+![eed4a148-b4f4-4b9a-bf25-05aac8d7ce63](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/c6d2badf-c48e-46cb-ba74-321b6c6ed2c3)
+![da47454b-f651-451d-85d6-b3e0349ee53b](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/27ba4152-ad2d-42f5-b772-c481f07f87be)
 
 ## nexus
 ![image](https://github.com/SalmaAhmed20/DevOps-Grad-Project/assets/64385957/08078b03-28bb-49ee-bfc7-cf3b90d56cc9)
